@@ -3,6 +3,7 @@
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
+    "applicationUrl": "http://localhost:5001",
     "configurations": [
         {
             "name": ".NET Core Launch (web)",
@@ -17,6 +18,7 @@
                 "action": "openExternally",
                 "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
             },
+            
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
             },
