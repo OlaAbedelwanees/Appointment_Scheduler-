@@ -22,14 +22,18 @@ namespace DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)  
         {
-            modelBuilder.Entity<Appointment>()
-                .HasOne<User>(s => s.User)
-                .WithMany(g => g.Appointments)
-                .HasForeignKey(s => s.UserId);
+            // modelBuilder.Entity<Appointment>()
+            //     .HasOne<User>(s => s.User)
+            //     .WithMany(g => g.Appointments)
+            //     .HasForeignKey(s => s.UserId);
 
                  base.OnModelCreating(modelBuilder); 
         }
 
-
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+            //optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Test");
+        }
     }
 }

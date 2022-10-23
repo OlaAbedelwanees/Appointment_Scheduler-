@@ -10,7 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using DAL;
 
 namespace Appointment_Scheduler_
 {
@@ -26,7 +28,8 @@ namespace Appointment_Scheduler_
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDbContext<AppointmentSchedulatContext>( options => options.UseSqlServer("name=ConnectionStrings:AppointmentSchuedulerDB"));
+        
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
